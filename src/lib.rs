@@ -3,9 +3,8 @@ use std::fs;
 use std::path::PathBuf;
 use std::str::FromStr;
 
-use indicatif::MultiProgress;
 #[cfg(feature = "progress")]
-use indicatif::{ProgressBar, ProgressStyle};
+use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
 use tokio::task::JoinSet;
 
 use crate::cli::Command;
