@@ -1,6 +1,6 @@
 [package]
 name = "srt-delay"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 authors = ["Dimitri-Chln <dimitri@mayze.xyz>"]
 repository = "https://github.com/Dimitri-chln/srt-delay.git"

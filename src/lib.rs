@@ -18,7 +18,7 @@ pub mod timestamp;
 
 #[cfg(feature = "progress")]
 const PROGRESS_STYLE_TEMPLATE: &str =
-    "{prefix:<30} | {elapsed_precise} {bar:<30} {percent:>3}% [{pos}/{len}] [ETA: {eta}]";
+    "{msg:<50!} | {elapsed_precise} {wide_bar} {percent:>3}% [{pos:>5}/{len:<5}] [ETA: {eta:<6}]";
 
 pub async fn delay_srt(command: &Command) -> Vec<Result<(), Error>> {
     let mut join_set = JoinSet::new();
@@ -53,7 +53,7 @@ pub async fn delay_srt(command: &Command) -> Vec<Result<(), Error>> {
                 let line_count = content.lines().count() as u64;
                 let progress = ProgressBar::new(line_count)
                     .with_style(progress_style.clone())
-                    .with_prefix(input_file.to_string_lossy().to_string());
+                    .with_message(input_file.to_string_lossy().to_string());
 
                 multi_progress.add(progress)
             };
