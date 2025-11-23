@@ -1,6 +1,18 @@
 [package]
 name = "srt-delay"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2024"
+authors = ["Dimitri-Chln <dimitri@mayze.xyz>"]
+repository = "https://github.com/Dimitri-chln/srt-delay.git"
+license = "MIT"
 
 [dependencies]
+clap = { version = "4.5.53", features = ["derive"] }
+indicatif = { version = "0.18.3", optional = true }
+regex = "1.12.2"
+thiserror = "2.0.17"
+tokio = { version = "1.48.0", features = ["full"] }
+
+[features]
+default = ["progress"]
+progress = ["indicatif"]
